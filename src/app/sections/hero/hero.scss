@@ -1,0 +1,75 @@
+.hero-section {
+  width: 80%;
+}
+
+h3 {
+  padding: 0;
+}
+
+
+
+p span.primary {
+  color: var(--primary-color);
+}
+
+p span.accent {
+  color: var(--accent-color);
+}
+
+p {
+  font-size: 20px;
+  letter-spacing: 1.5px;
+  width: fit-content;
+}
+
+.social-links {
+  margin-top: 2rem;
+  display: inline-block;
+}
+.social-links i {
+  font-size: 1.5rem;
+  margin-right: 0.3rem;
+  color: var(--primary-color);
+  transition: color 0.3s ease-in-out, translate 0.3s ease-in-out;
+}
+
+.social-links i:hover {
+  translate: 0px -10px;
+}
+
+.social-links i:nth-child(1):hover {
+  color: #1f1b1b;
+}
+.social-links i:nth-child(2):hover {
+  color: #09a1f3;
+}
+.social-links i:nth-child(3):hover {
+  color: #f3f3f3;
+}
+
+.social-links i:nth-child(4):hover {
+  color: #1877f2;
+}
+
+p span .typewriter {
+  overflow: hidden;
+  border-right: 2px solid var(--accent-color);
+  animation: typing 2s steps(32, end), blink 1s step-end infinite;
+  font-size: 32px;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+

@@ -1,0 +1,136 @@
+/* You can add global styles to this file, and also import other style files */
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #f1c40f;
+    --accent-color: #e74c3c;
+    --background-color: #ecf0f1; /* soft light gray */
+    --font-heading: 'Silkscreen', cursive;
+    --font-family-style: 'Inter', 'Segoe UI', sans-serif;
+
+    /* Light Theme Defaults */
+    --bg-color: #ffffff;
+    --text-color: #1e1e1e;
+    --p-text: #2c3e50;
+
+    --primary: #3498db;
+    --secondary: #f1c40f;
+    --accent: #e74c3c;
+    --bg: #0b0b0c;
+    --text: #e9eef2;
+    --muted: #a5b0b8;
+    --card-bg: rgba(255, 255, 255, .05);
+    --card-border: rgba(255, 255, 255, .08);
+    --radius: 18px;
+
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+@font-face {
+  font-family: 'Silkscreen';
+  src: url('../public/assets/fonts/Silkscreen-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Silkscreen';
+  src: url('../public/assets/fonts/Silkscreen-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #000;
+}
+
+
+h1, h2,h3, a {
+    color: var(--primary-color);
+    font-family: var(--font-heading);
+    font-weight: 400;
+    font-style: normal;
+}
+h3 {
+    font-size:1.5rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h1 {
+  font-size: 4.3rem;
+
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    h2 {
+        font-size: 1.8rem;
+    }
+    h3 {
+        font-size: 1.2rem;
+    }
+}
+
+#about, #skills, #projects, #contact, .footer-group {
+  margin: 0 5%;
+  
+}
+
+.hero {
+  background: url('../public/right-black-pic.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 100%;
+  min-height: 70vh;
+  color: var(--bg-color);
+  animation: fadeIn 1s forwards ease;
+  // opacity: 0;
+  animation-delay: 0.3s;
+  margin: 0 0 0 5%;
+}
+
+@media (max-width: 760px) {
+  .hero {
+    background-position: 60%;
+  }
+}
+
+.hero::after {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: -1;
+}
+
+.about, .skills, .projects, .contacts {
+  margin: 2rem 0;
+}
+
+.about {
+  width: 100%;
+  min-height: 55vh;
+  
+  background-color: #555353;
+  border-radius: 100px;
+  padding: 2rem;
+}

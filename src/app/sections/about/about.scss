@@ -1,0 +1,56 @@
+:host {
+  display: block;
+  opacity: 0;
+  animation: fadeIn 2s ease forwards;
+  animation-delay: 0.4s;
+}
+
+
+
+
+.about-me {
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.glass-tinted-glow {
+  background: rgba(9, 108, 214, 0.2); // bluish tint
+  border-radius: 16px;
+  padding: 2rem;
+  border: 1px solid rgba(0, 123, 255, 0.2); // soft blue border
+  box-shadow:
+    0 4px 30px rgba(0, 123, 255, 0.8),   // blue glow
+    0 0 8px rgba(0, 123, 255, 0.9);     // inner soft glow
+  color: #ffffff;
+  transition: all 1s ease-in-out;
+}
+
+.about-content {
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+.slide-fade {
+  animation: slideFadeIn 1s ease-out forwards;
+  animation-delay: 0.2s;
+}
+
+@keyframes slideFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}

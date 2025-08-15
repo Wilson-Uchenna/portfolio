@@ -1,0 +1,104 @@
+<div class="contacts">
+    <div class="contact-write">
+        <h2 class="contacts-title">Get in Touch</h2>
+        <p class="contact-text">I’m always open to new opportunities, collaborations, or just a friendly chat. Use the
+            form below or reach out via email and social platforms to connect.</p>
+
+    </div>
+
+    <div class="contact-info">
+        <div class="call-whatsapp">
+            <div class="call">
+                <p>Calls at</p>
+                <p>+2348068701807</p>
+                <p>+2348054645742</p>
+            </div>
+
+            <div class="whatsapp">
+                <p>WhatsApp Us</p>
+                <p>+2348068701807</p>
+            </div>
+        </div>
+        <div class="message">
+            <p>Send us a message</p>
+            <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form" novalidate aria-live="polite">
+                <div class="field">
+                    <label for="name">Name</label>
+                    <input id="name" type="text" formControlName="name" placeholder="Your name" />
+
+                    @if (f['name'].invalid && (f['name'].dirty || f['name'].touched)) {
+                    <div class="error">
+
+                        @if (f['name'].errors?.['required']) {
+                        <span>Name is required.</span>
+                        }
+                        @if (f['name'].errors?.['minlength']) {
+                        <span>Too short.</span>
+                        }
+                    </div>
+                    }
+
+                </div>
+
+                <div class="field">
+                    <label for="email">Email</label>
+                    <input id="email" type="email" formControlName="email" placeholder="you@example.com" />
+
+                    @if (f['email'].invalid && (f['email'].dirty || f['email'].touched)) {
+                    <div class="error">
+                        @if (f['email'].errors?.['required']) {
+                        <span>Email is required.</span>
+                        }
+                        @if (f['email'].errors?.['email']) {
+                        <span>Invalid email.</span>
+                        }
+
+                    </div>
+                    }
+
+                </div>
+
+                <div class="field">
+                    <label for="message">Message</label>
+                    <textarea id="message" formControlName="message" rows="5"
+                        placeholder="What’s on your mind?"></textarea>
+
+                    @if (f['message'].invalid && (f['message'].dirty || f['message'].touched)) {
+                    <div class="error">
+                        @if (f['message'].errors?.['required']) {
+                        <span>Message is required.</span>
+                        }
+                        @if (f['message'].errors?.['minlength']) {
+                        <span>At least 10 characters.</span>
+                        }
+                    </div>
+                    }
+
+                </div>
+
+                <!-- honeypot (hidden) to trap bots -->
+                <div style="display:none;">
+                    <label for="_gotcha">Leave this field empty</label>
+                    <input id="_gotcha" type="text" formControlName="_gotcha" autocomplete="off" />
+                </div>
+
+                <div class="feedback">
+                    @if (success) {
+                        <div class="success">Sent! I’ll get back to you soon.</div>
+                    } @else if (success === false) {
+                        <div class="error">{{ errorText }}</div>
+                    }
+                    
+                    
+                </div>
+
+                <button type="submit" [disabled]="contactForm.invalid || submitting" class="submit-btn">
+                    {{ submitting ? 'Sending…' : 'Send Message' }}
+                </button>
+            </form>
+
+
+        </div>
+
+    </div>
+</div>
