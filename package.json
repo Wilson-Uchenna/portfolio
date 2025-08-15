@@ -5,7 +5,7 @@
   "ng": "ng",
   "start": "ng serve",
   "build": "ng build",
-  "build:ssr": "ng build",
+  "build:ssr": "ng build && ng run my-portfolio:serve --no-hmr",
   "serve:ssr": "ng run my-portfolio:serve-ssr",
   "serve:ssr:prod": "node dist/my-portfolio/server/server.mjs",
   "watch": "ng build --watch --configuration development",
