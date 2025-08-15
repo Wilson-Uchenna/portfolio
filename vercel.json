@@ -1,15 +1,11 @@
 {
-  "version": 2,
-  "framework": null,
   "buildCommand": "npm run build:ssr",
-  "outputDirectory": "dist/my-portfolio",
-  "builds": [
+  "outputDirectory": "dist/my-portfolio/browser",
+  "framework": "angular",
+  "rewrites": [
     {
-      "src": "dist/my-portfolio/server/server.mjs",
-      "use": "@vercel/node"
+        "source": "/(.*)",
+        "destination": "/index.html"
     }
-  ],
-  "routes": [
-    { "src": "/(.*)", "dest": "dist/my-portfolio/server/server.mjs" }
   ]
 }
